@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { CreateGroups } from './components/CreateGroups'
+import { Addmembers } from './components/Addmembers'
+import { Expends } from './components/Expends'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  <BrowserRouter>
+    <Routes>
+      <Route path = "/" element={<CreateGroups />} />
+      <Route path = "/members" element={<Addmembers />} />
+      <Route path = "/expends" element={<Expends />} />
+    </Routes>
+  </BrowserRouter>
 }
 
-export default App;
+export default App
